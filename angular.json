@@ -13,6 +13,15 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": {
+            "translation": "src/locale/messages.fr.xlf",
+            "baseHref": "fr"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -40,7 +49,8 @@
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
-            }
+            },
+            "i18nMissingTranslation": "warning"
           },
           "configurations": {
             "production": {
@@ -62,6 +72,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "fr": {
+              "localize": ["fr"]
             }
           },
           "defaultConfiguration": "production"
@@ -74,6 +87,9 @@
             },
             "development": {
               "buildTarget": "aesthetics-app:build:development"
+            },
+            "fr": {
+              "buildTarget": "aesthetics-app:build:fr"
             }
           },
           "defaultConfiguration": "development"
