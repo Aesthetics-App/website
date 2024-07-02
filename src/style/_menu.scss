@@ -1,0 +1,363 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16 déc. 2017, 15:10:38
+    Author     : david
+*/
+
+$side-nav-width: 300px;
+$sub-menu-item-height: 48px;
+
+.aw-nav-bar {
+    position: fixed;
+    top: 0;
+        
+    -webkit-transition: background-color $short-duration, box-shadow $short-duration;
+    -moz-transition: background-color $short-duration, box-shadow $short-duration;
+    -o-transition: background-color $short-duration, box-shadow $short-duration;
+    transition: background-color $short-duration, box-shadow $short-duration;
+    
+    ul, li {
+        padding: 0;
+        margin: 0;
+    }
+    
+    li {
+        list-style: none;
+        
+        a, .aw-menu-item {
+            cursor: pointer;
+        }
+    }
+}
+
+.aw-nav-bar .aw-menu-item-break-js {
+    opacity: 0;
+    -webkit-transition: opacity $short-duration;
+    -moz-transition: opacity $short-duration;
+    -o-transition: opacity $short-duration;
+    transition: opacity $short-duration;
+}
+
+.aw-nav-bar.aw-dark-menu{
+    background: $color-primary-dark;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+    
+    .aw-menu-item-break-js {
+        opacity: 1;
+    }
+}
+
+.aw-large-app-bar {
+    // prepare arrow
+    .aw-menu-item-sub-menu>a, 
+    .aw-menu-item-sub-menu>.aw-menu-item {
+        position: relative;
+    }
+
+    .aw-menu-item-sub-menu>a::after,
+    .aw-menu-item-sub-menu>.aw-menu-item::after {
+        content: '';
+        position: absolute;
+        display: block;
+        border: 7px solid transparent;
+        border-top-width: 7px;
+    }
+
+    .aw-menu-item-sub-menu.aw-expanded>a::after,
+    .aw-menu-item-sub-menu.aw-expanded>.aw-menu-item::after {
+        border-top-color: transparent;
+    }
+}
+
+@media (max-width: $medium-size) {
+    // side nav
+    .aw-nav-bar {
+        height: $app-bar-height-small;
+        right: 0;
+        left: 0;
+        padding: 0 8px 0 8px;
+        display: flex;
+        
+        ul, li {
+            display: block;
+        }
+        
+        .aw-nav-bar-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: $app-bar-height-small;
+            position: fixed;
+            top: 0;
+            right: 0;
+            
+            img {
+                display: block;
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+    
+    .aw-nav-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+        align-self: center;
+        
+        i {
+            display: block;
+        }
+    }
+    
+    .aw-large-app-bar {
+        // here is a side navigator
+        width: $side-nav-width;
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -$side-nav-width;
+        overflow-x: scroll;
+        background-color: white;
+        
+        -webkit-transition: left $short-duration ease-in;
+        -moz-transition: left $short-duration ease-in;
+        -o-transition: left $short-duration ease-in;
+        transition: left $short-duration ease-in;
+        
+        .aw-menu-item-icon {
+            display: none;
+        }
+        
+        .aw-btn.aw-btn-light {
+            border-width: 0px;
+            border-radius: 2px;
+            font-size: 13px;
+            text-transform: uppercase;
+            padding: 9.5px 16px 9.5px 16px;
+            color: white;
+            background-color: $color-accent;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+        }
+        
+        .aw-btn.aw-btn-light:hover {
+            background-color: $color-accent-focussed;
+        }
+        
+        .aw-btn.aw-btn-light:active {
+            background-color: $color-accent-pressed;
+        }
+        
+        li>a, 
+        li>.aw-menu-item {
+            display: block;
+            height: 48px;
+            line-height: 48px;
+            vertical-align: middle;
+            padding: 0 16px 0 16px;
+            color: $dark-primary-text;
+        }
+        
+        li>a:hover, 
+        li>.aw-menu-item:hover {
+            background-color: rgba(33, 33, 33, .12);
+            
+            &.aw-hover-none {
+                background-color: initial;
+            }
+        }
+        
+        .aw-menu-item-sub-menu ul {            
+            overflow: hidden;
+            height: 0px;
+                
+            -webkit-transition: height $short-duration ease-in;
+            -moz-transition: height $short-duration ease-in;
+            -o-transition: height $short-duration ease-in;
+            transition: height $short-duration ease-in;
+        }
+        
+        // prepare arrow
+        .aw-menu-item-sub-menu>a, 
+        .aw-menu-item-sub-menu>.aw-menu-item {
+            padding-right: 40px;
+        }
+        
+        .aw-menu-item-sub-menu>a::after,
+        .aw-menu-item-sub-menu>.aw-menu-item::after {
+            content: '';
+            border-top-color: $dark-secondary-text;
+            right: 19px;
+            top: 20.5px;
+        }
+
+        .aw-menu-item-sub-menu.aw-expanded>a::after,
+        .aw-menu-item-sub-menu.aw-expanded>.aw-menu-item::after {
+            border-bottom-color: $dark-secondary-text;
+            top: 13.5px;
+        }
+        
+        .aw-menu-item-break-js {
+            opacity: 1;
+        }
+    }
+    
+    .aw-nav-bar.aw-side-nav-open .aw-large-app-bar {
+        left: 0;
+    }
+    
+    .aw-large-app-bar>ul {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        
+        ul li a {
+            padding-left: 32px;
+        }
+    }
+    
+    .aw-layout-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        top:0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        
+        -webkit-transition: opacity $short-duration;
+        -moz-transition: opacity $short-duration;
+        -o-transition: opacity $short-duration;
+        transition: opacity $short-duration;
+    }
+    
+    .aw-nav-bar.aw-side-nav-open .aw-layout-overlay {
+        opacity: 1;
+    }
+    
+    .aw-nav-bar.aw-dark-menu .aw-nav-bar-logo {
+        opacity: 1;
+    }
+}
+
+@media (min-width: $over-medium-size) {
+    // app bar
+    .aw-nav-bar {
+        width: 100%;
+        font-size: 20px;
+        
+        .aw-nav-bar-logo {
+            display: none;
+        }
+        
+        .aw-large-app-bar .aw-menu-item-break-js {
+            width: 0;
+            overflow: hidden;
+            
+            -webkit-transition: width $short-duration;
+            -moz-transition: width $short-duration;
+            -o-transition: width $short-duration;
+            transition: width $short-duration;
+        }
+    }
+    
+    .aw-nav-button {
+        display: none;
+    }
+    
+    .aw-large-app-bar>ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .aw-large-app-bar {
+        
+        .aw-btn.aw-btn-light {
+            border-radius: 2px;
+            text-transform: uppercase;
+            padding: 11px 16px 11px 16px;
+            color: white;
+        }
+        
+        .aw-btn.aw-btn-light:hover {
+            color: $dark-primary-text;
+        }
+        
+        li>a,
+        li>.aw-menu-item {
+            display: block;
+            height: $app-bar-height-small;
+            line-height: $app-bar-height-small;
+            vertical-align: middle;
+            padding: 0 16px 0 16px;
+            color: white;
+        }
+        
+        .aw-menu-item-sub-menu ul {
+            position: absolute;
+            overflow-y: hidden;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            height: 0px;
+            background-color:  white;
+            border-radius: 2px;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+            
+            li>a,
+            li>.aw-menu-item {
+                color: $dark-primary-text;
+                height: $sub-menu-item-height;
+                line-height: $sub-menu-item-height;
+            }
+        }
+        
+        .aw-menu-item-sub-menu.aw-expanded ul {
+            padding: 8px 0 8px 0;
+        }
+        
+        .aw-menu-item-icon {
+            img {
+                display: inline;
+                width: 45px;
+                height: 45px;
+                vertical-align: middle;
+            }
+        }
+        
+        // prepare arrow
+        .aw-menu-item-sub-menu>a, 
+        .aw-menu-item-sub-menu>.aw-menu-item {
+            padding-right: 56px;
+        }
+        
+        .aw-menu-item-sub-menu>a::after,
+        .aw-menu-item-sub-menu>.aw-menu-item::after {
+            content: '';
+            border-top-color: white;
+            right: 19px;
+            top: 26.5px;
+        }
+
+        .aw-menu-item-sub-menu.aw-expanded>a::after,
+        .aw-menu-item-sub-menu.aw-expanded>.aw-menu-item::after {
+            border-bottom-color: white;
+            top: 19.5px;
+        }
+    }
+    
+    .aw-nav-bar.aw-dark-menu {
+         .aw-menu-item-icon {
+            opacity: 1;
+        }
+    }
+}

@@ -6,13 +6,16 @@
     <h1 i18n class="padding-16 aw-header-info-js aw-center">
       Just have to lift
     </h1>
-    <a itemprop="downloadUrl" [href]="app.android.link" class="btn aw-btn-light light aw-header-info-js"
+    <a itemprop="downloadUrl" [href]="app.android.link" class="btn aw-btn-icon aw-btn-light light aw-header-info-js"
       target="_blank" rel="noopener">
-      <i class="mdi mdi-android" area-hidden="true"></i><ng-container i18n>Download</ng-container>
+      <span class="material-symbols-outlined" area-hidden="true">android</span>
+      <ng-container i18n>Download</ng-container>
     </a>
   </section>
   <nav class="aw-nav-bar">
-    <span class="aw-nav-button" id="button-menu"><i class="mdi mdi-menu" area-hidden="true"></i></span>
+    <span class="aw-nav-button" id="button-menu">
+      <span class="material-symbols-outlined" area-hidden="true">menu</span>
+    </span>
     <div class="aw-nav-bar-logo aw-menu-item-break-js">
       <img src="/favicon.ico" i18n-alt="Logo" />
     </div>
@@ -25,7 +28,7 @@
         </li>
         <li><a href="#app" i18n>App</a></li>
         <li><a href="#follow" i18n>Social networks</a></li>
-        <li><a href="#contact" i18n>Contact me</a></li>
+        <li><a href="#contact-section" i18n>Contact me</a></li>
         <li class="aw-menu-item-sub-menu">
           <span class="aw-menu-item" i18n>Language</span>
           <ul>

@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 déc. 2017, 22:14:13
+    Author     : david
+*/
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.aw-fade-in {
+    animation-name: fade-in;
+    animation-duration: $x-long-duration;
+}
