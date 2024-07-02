@@ -1,0 +1,36 @@
+<footer class="aw-footer">
+  <div class="aw-constrained padding-top-32 padding-bottom-32">
+    <div class="aw-layout" id="footer-content">
+      <div class="aw-s-12 aw-l-6">
+        <p class="margin-bottom-16" i18n>
+          Version:&nbsp;<span itemprop="softwareVersion">{{ app.android.version }}</span>
+        </p>
+        <p class="margin-bottom-16" i18n>
+          Device:&nbsp;<span itemprop="operatingSystem">Android</span>
+        </p>
+        <p class="margin-bottom-16">
+          Publication date:&nbsp;<span itemprop="datePublished" content="2018-01-01">
+          {{ app.android.publicationDate | date: 'mediumDate' }}
+          </span>
+        </p>
+        <p>
+          <a href="/privacy_policy.html" target="_blank" class="a-underline" rel="noopener" i18n>Privacy policy</a>
+        </p>
+      </div>
+      <div class="aw-s-12 aw-l-6 s-margin-top-32" itemscope itemtype="http://schema.org/Person">
+        <a itemprop="url" href="https://www.linkedin.com/in/david-belbeze-3a4243116/" target="_blank" rel="noopener">
+          <div class="aw-idetity margin-bottom-16">
+            <img src="/image/david-belbeze.jpg" i18n-alt="Photo of the app author" class="margin-right-16 m-margin-right-32"/>
+            <p class="aw-center">
+              <span itemprop="name" class="aw-bold">David BELBEZE</span>
+            </p>
+            <meta itemprop="image" content="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAqQAAAAJGZiNmNjMTZkLWE2MWMtNDZhMS1iNTY5LTIwMTZkNzU4YzMwMQ.jpg">
+          </div>
+          <div>
+            <i class="mdi mdi-linkedin" area-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
