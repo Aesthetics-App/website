@@ -46,6 +46,9 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
   @ViewChild('container', { static: true })
   public container!: ElementRef<HTMLScriptElement>;
 
+  @ViewChild('navBar', { static: true })
+  public navBar!: ElementRef<HTMLScriptElement>;
+
   @ViewChildren(ItemBreakDirective)
   public breakPointItems!: QueryList<ItemBreakDirective>;
 
@@ -127,7 +130,8 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   private onScrollForSection(scroll: number) {
     let position: number = 0;
-    const sectionBreakPoint = this.container.nativeElement.offsetHeight;
+    const sectionBreakPoint = this.container.nativeElement.offsetHeight
+      - this.navBar.nativeElement.offsetHeight;
     if (scroll <= sectionBreakPoint && sectionBreakPoint < this.actualScroll) {
       // When under break point
       //  Update items width
