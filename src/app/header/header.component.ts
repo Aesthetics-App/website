@@ -27,9 +27,16 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   private scrollCallback: ((ev: Event) => any)|null = null;
 
+  private clickCallback: ((ev: Event) => any)|null = null;
+
   public readonly app = APP_CONSTANTS;
 
   public isDarkMenu: boolean = false;
+
+  public languageMenu = {
+    height: '',
+    isOpen: false,
+  };
 
   public logoRight: string = '';
 
@@ -45,10 +52,16 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
   public ngOnInit(): void {
     this.resizeCallback = (ev: Event) => this.onResize(window.innerWidth);
     this.scrollCallback = (ev: Event) => this.onGlobalScroll(ev);
+    this.clickCallback = (_: Event) => {
+      // Close the menu
+      this.languageMenu.isOpen = false;
+      this.languageMenu.height = '';
+    }
 
     if (typeof window !== "undefined") {
       window.addEventListener('resize', this.resizeCallback);
       window.addEventListener('scroll', this.scrollCallback);
+      window.addEventListener('click', this.clickCallback)
     }
   }
 
@@ -135,5 +148,28 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
     } else if (position != 0) {
       this.breakPointItems.forEach((item) => item.setSizeToZero());
     }
+  }
+
+  /**
+   * Callback called when user click on language menu.
+   */
+  public toggleLanguageMenu(ev: Event) {
+    this.languageMenu.isOpen = !this.languageMenu.isOpen;
+
+    if (this.languageMenu.isOpen) {
+      // Calculate the normal height of the parent
+      let height = 0;
+      (ev.target as HTMLElement).parentElement?.querySelectorAll('li').forEach(
+        (listItem) => {
+          height += listItem.offsetHeight;
+        }
+      );
+
+      this.languageMenu.height = `${height}px`;
+    } else {
+      this.languageMenu.height = '0px';
+    }
+
+    ev.stopPropagation();
   }
 }
