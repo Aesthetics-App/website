@@ -55,11 +55,16 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   public logoRight: string = '';
 
+  public contentOpacity: number|undefined = undefined;
+
   @ViewChild('logo', { static: true })
   public logoElement!: ElementRef<HTMLDivElement>;
 
   @ViewChild('container', { static: true })
   public container!: ElementRef<HTMLScriptElement>;
+
+  @ViewChild('contentTop', { static: true })
+  public header!: ElementRef<HTMLScriptElement>;
 
   @ViewChild('navBar', { static: true })
   public navBar!: ElementRef<HTMLScriptElement>;
@@ -165,10 +170,16 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
 
     // Update the background of navigator
     this.onScrollForSection(scroll);
+    // Update content opacity according to scroll position
+    this.onScrollForSectionContent(scroll);
 
     this.actualScroll = scroll;
   }
 
+  /**
+   * Update view according to current scroll position.
+   * @param scroll The current Y scroll position.
+   */
   private onScrollForSection(scroll: number) {
     let position: number = 0;
     const sectionBreakPoint = this.container.nativeElement.offsetHeight
@@ -192,6 +203,29 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
       this.breakPointItems.forEach((item) => item.setRealSize());
     } else if (position != 0) {
       this.breakPointItems.forEach((item) => item.setSizeToZero());
+    }
+  }
+
+  /**
+   * Compute elements opacity according to screen size and current scroll position.
+   * @param scroll The current Y scroll position.
+   */
+  private onScrollForSectionContent(scroll: number) {
+    if (window.innerWidth > MEDIUM_SIZE) {
+      const currentPosition = scroll;
+      const headerScrollTop = this.header.nativeElement.getBoundingClientRect().top + scroll;
+
+      const breakPoint = headerScrollTop - this.navBar.nativeElement.offsetHeight;
+
+      if (breakPoint <= currentPosition && currentPosition < headerScrollTop) {
+        this.contentOpacity = 1 - (currentPosition - breakPoint) / (headerScrollTop - breakPoint);
+      } else if (currentPosition < breakPoint) {
+        this.contentOpacity = undefined;
+      } else {
+        this.contentOpacity = 0;
+      }
+    } else {
+      this.contentOpacity = undefined;
     }
   }
 

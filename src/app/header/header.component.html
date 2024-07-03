@@ -1,12 +1,12 @@
 <header class="aw-header" id="aw-break-js">
   <section #container>
-    <h1 i18n itemprop="name" class="padding-16 aw-header-info-js aw-fat aw-center">
+    <h1 #contentTop i18n itemprop="name" class="padding-16 aw-fat aw-center" [style.opacity]="contentOpacity">
       Aesthetics Workout
     </h1>
-    <h1 i18n class="padding-16 aw-header-info-js aw-center">
+    <h1 i18n class="padding-16 aw-center" [style.opacity]="contentOpacity">
       Just have to lift
     </h1>
-    <a itemprop="downloadUrl" [href]="app.android.link" class="btn aw-btn-icon aw-btn-light light aw-header-info-js"
+    <a itemprop="downloadUrl" [href]="app.android.link" class="btn aw-btn-icon aw-btn-light light" [style.opacity]="contentOpacity"
       target="_blank" rel="noopener">
       <span class="material-symbols-outlined" area-hidden="true">android</span>
       <ng-container i18n>Download</ng-container>
