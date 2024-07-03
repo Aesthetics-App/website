@@ -12,14 +12,14 @@
       <ng-container i18n>Download</ng-container>
     </a>
   </section>
-  <nav #navBar class="aw-nav-bar" [class.aw-dark-menu]="isDarkMenu">
-    <span class="aw-nav-button" id="button-menu">
+  <nav #navBar class="aw-nav-bar" [class.aw-dark-menu]="isDarkMenu" [class.aw-side-nav-open]="sideMenu.isOpen">
+    <span class="aw-nav-button" id="button-menu" (click)="openSideMenu()">
       <span class="material-symbols-outlined" area-hidden="true">menu</span>
     </span>
     <div #logo class="aw-nav-bar-logo aw-menu-item-break-js" item-break [style.right]="logoRight">
       <img src="/favicon.ico" i18n-alt="Logo" />
     </div>
-    <div class="aw-large-app-bar">
+    <div #drawer class="aw-large-app-bar">
       <ul>
         <li class="aw-menu-item-icon aw-menu-item-break-js" item-break>
           <a href="#">

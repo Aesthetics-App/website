@@ -4,6 +4,16 @@ import { APP_CONSTANTS } from '../../app.constants';
 import { ItemBreakDirective } from '../item-break.directive';
 import { MEDIUM_SIZE } from '../core/metrics';
 
+
+const SHORT_DURATION = 250;
+
+
+type SideMenu = {
+  overlay: HTMLDivElement|null;
+  isOpen: boolean;
+};
+
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -38,6 +48,11 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
     isOpen: false,
   };
 
+  public sideMenu: SideMenu = {
+    overlay: null,
+    isOpen: false,
+  }
+
   public logoRight: string = '';
 
   @ViewChild('logo', { static: true })
@@ -49,10 +64,27 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
   @ViewChild('navBar', { static: true })
   public navBar!: ElementRef<HTMLScriptElement>;
 
+  @ViewChild('drawer', { static: true })
+  public drawer!: ElementRef<HTMLScriptElement>;
+
   @ViewChildren(ItemBreakDirective)
   public breakPointItems!: QueryList<ItemBreakDirective>;
 
   public ngOnInit(): void {
+    if (typeof document !== 'undefined') {
+      const overlay = document.createElement('div');
+      overlay.classList.add('aw-layout-overlay');
+      overlay.style.width = '0';
+
+      overlay.addEventListener('click', () => {
+        this.closeSideMenu();
+      });
+      // Insert overlay element
+      this.drawer.nativeElement.before(overlay);
+
+      this.sideMenu.overlay = overlay;
+    }
+
     this.resizeCallback = (ev: Event) => this.onResize(window.innerWidth);
     this.scrollCallback = (ev: Event) => this.onGlobalScroll(ev);
     this.clickCallback = (_: Event) => {
@@ -61,7 +93,7 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
       this.languageMenu.height = '';
     }
 
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       window.addEventListener('resize', this.resizeCallback);
       window.addEventListener('scroll', this.scrollCallback);
       window.addEventListener('click', this.clickCallback)
@@ -75,7 +107,15 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
   }
 
   public ngOnDestroy(): void {
+    if (this.sideMenu.overlay) {
+      this.sideMenu.overlay.remove()
+    }
 
+    if (typeof window !== "undefined") {
+      window.removeEventListener('resize', this.resizeCallback!);
+      window.removeEventListener('scroll', this.scrollCallback!);
+      window.removeEventListener('click', this.clickCallback!)
+    }
   }
 
   /**
@@ -112,6 +152,7 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
     } else if (newSize > MEDIUM_SIZE && this.actualWidth <= MEDIUM_SIZE) {
       // When over break point
       this.logoRight = '';
+      this.closeSideMenu();
     }
 
     this.actualWidth = window.innerWidth;
@@ -175,5 +216,23 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
     }
 
     ev.stopPropagation();
+  }
+
+  public closeSideMenu() {
+    this.sideMenu.isOpen = false;
+
+    setTimeout(
+      () => {
+        this.sideMenu.overlay!.style.width = '0';
+        document.body.style.overflow = 'visible';
+      },
+      SHORT_DURATION,
+    );
+  }
+
+  public openSideMenu() {
+    this.sideMenu.isOpen = true;
+    this.sideMenu.overlay!.style.width = '100%';
+    document.body.style.overflow = 'hidden';
   }
 }
