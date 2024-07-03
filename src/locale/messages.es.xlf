@@ -3,21 +3,21 @@
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="645636262013768288" datatype="html">
-        <source> Version : <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span itemprop=&quot;softwareVersion&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ app.android.version }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <source> Versión : <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span itemprop=&quot;softwareVersion&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{ app.android.version }}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/footer/footer.component.html</context>
           <context context-type="linenumber">6,8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4567253799941865607" datatype="html">
-        <source> Appareils : <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span itemprop=&quot;operatingSystem&quot;&gt;"/>Android<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <source> Dispositivos : <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span itemprop=&quot;operatingSystem&quot;&gt;"/>Android<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/footer/footer.component.html</context>
           <context context-type="linenumber">9,11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6090931838305354672" datatype="html">
-        <source>Politique de confidentialité</source>
+        <source>Política de privacidad</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/footer/footer.component.html</context>
           <context context-type="linenumber">17,18</context>
@@ -38,112 +38,112 @@
         </context-group>
       </trans-unit>
       <trans-unit id="3099741642167775297" datatype="html">
-        <source>Télécharger</source>
+        <source>Descargar</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2818570902941667477" datatype="html">
-        <source>Application</source>
+        <source>Aplicación</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">29,30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="221931005807611969" datatype="html">
-        <source>Réseaux sociaux</source>
+        <source>Redes sociales</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">30,31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1153721192129533394" datatype="html">
-        <source>Contact</source>
+        <source>Contacto</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">31,32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2826581353496868063" datatype="html">
-        <source>Langue</source>
+        <source>Idioma</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">33,34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2256581797902573217" datatype="html">
-        <source> Télécharger </source>
+        <source> Descargar </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7670864555274052358" datatype="html">
-        <source> 3 solutions en 1 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>application<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> pour le <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>fitness<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, la <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>musculation<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> et le <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>CrossFit<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <source> 3 soluciones en 1 <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>aplicación<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> para el <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>fitness<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, el <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>culturismo<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> y el <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>CrossFit<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">5,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="24533833551401965" datatype="html">
-        <source>Votre <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>carnet d'entraînement<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <source>Tu <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>registro de entrenamiento<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">10,11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2877640137246296504" datatype="html">
-        <source> Enregistrez votre <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>programme<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, profitez de votre séance et sauvegardez vos <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>performances<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> en toute simplicité. </source>
+        <source> Registra tu <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>programa<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, disfruta de tu sesión y guarda tus <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>resultados<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con facilidad. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">13,16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7664478408850063852" datatype="html">
-        <source>Votre <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>chronomètre<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <source>Tu <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>cronómetro<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">18,19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7942075062468805295" datatype="html">
-        <source> Lancez votre <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>timer<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, posez votre téléphone et récupèrez tranquillement. </source>
+        <source> Lanza tu <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>temporizador<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, deja tu teléfono y recupera tranquilamente. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">21,23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1255600441951877027" datatype="html">
-        <source>Votre ordinateur</source>
+        <source>Tu ordenador</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">26,27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6502871356072252274" datatype="html">
-        <source> Oubliez le <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>tableur<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> et visualisez en un coup d'oeil votre <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>progression<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> depuis votre dernière <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>séance<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>. </source>
+        <source> Olvida la <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>hoja de cálculo<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> y visualiza directamente tu <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>progreso<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> desde tu última <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>sesion<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> en la aplicación. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">29,32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6891425769689000932" datatype="html">
-        <source>Suivez les nouveautés de l'application</source>
+        <source>Sige las novedades de la aplicación</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">39,40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4027948876114096537" datatype="html">
-        <source>Des questions ? Des suggestions ? Contactez-moi !</source>
+        <source>¿Preguntas? ¿Propuesta? ¡Contáctame!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">59,60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="680687903062143973" datatype="html">
-        <source> Créer un ticket sur GitHub </source>
+        <source> Crear un problema en GitHub </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">67,68</context>
