@@ -1,5 +1,14 @@
 import { parseArgs } from 'node:util';
-import { readFileSync, writeFileSync } from 'fs';
+import {
+  readFileSync,
+  writeFileSync,
+  existsSync,
+  mkdirSync,
+  rmSync,
+  cpSync,
+  lstatSync,
+} from 'node:fs';
+import { dirname, join } from 'node:path';
 
 import nunjucks from 'nunjucks';
 import { parse } from 'yaml';
@@ -43,6 +52,42 @@ function translate([ path ], options) {
 }
 
 
+function makePublicSite([ path, outPath ]) {
+  if (!path || !outPath) {
+    printHelp();
+    return 2;
+  } else {
+    // Create an empty output directory
+    if (existsSync(outPath)) {
+      rmSync(outPath, { recursive: true });
+    }
+    mkdirSync(dirname(outPath), {  recursive: true });
+
+    // Copy en locale to / the
+    cpSync(join(path, 'en'), outPath, { recursive: true, filter: (src, _) => !src.endsWith('index.csr.html') });
+
+    // Copy fr and es to / in sub directory
+    for (const locale of ['fr', 'es']) {
+      cpSync(
+        join(path, locale),
+        join(outPath, locale),
+        {
+          recursive: true,
+          filter: (src, _) => {
+            return lstatSync(src).isDirectory()
+              || src.endsWith('.js')
+              || src.endsWith('.css')
+              || src.endsWith('index.html');
+          },
+        },
+      );
+    }
+  }
+
+  return 0;
+}
+
+
 const argv = process.argv.slice(2); // skip node and script name
 
 let action;
@@ -77,6 +122,9 @@ try {
     switch (positionals[0]) {
       case 'translate':
         action = () => translate(positionals.slice(1), values);
+        break;
+      case 'site':
+        action = () => makePublicSite(positionals.slice(1));
         break;
       default:
         throw Error('Unknown module', positionals[0]);
