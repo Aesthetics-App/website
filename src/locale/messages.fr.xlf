@@ -23,6 +23,13 @@
           <context context-type="linenumber">17,18</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1233384482169964192" datatype="html">
+        <source>Photo de l'auteur de l'application</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/footer/footer.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="3563201150261993483" datatype="html">
         <source> Aesthetics Workout </source>
         <context-group purpose="location">
@@ -42,6 +49,17 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/header/header.component.html</context>
           <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4550958265168690830" datatype="html">
+        <source>Logo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2818570902941667477" datatype="html">
@@ -140,6 +158,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
           <context context-type="linenumber">59,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7602880904367602434" datatype="html">
+        <source>Logo GitHub</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/showcase/showcase.component.html</context>
+          <context context-type="linenumber">62,63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="680687903062143973" datatype="html">
