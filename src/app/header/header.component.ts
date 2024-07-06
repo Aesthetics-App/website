@@ -101,7 +101,7 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', this.resizeCallback);
       window.addEventListener('scroll', this.scrollCallback);
-      window.addEventListener('click', this.clickCallback)
+      window.addEventListener('click', this.clickCallback);
     }
   }
 
@@ -148,7 +148,14 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
     );
 
     if (typeof window !== 'undefined') {
-      this.updateLogoRight(window.innerWidth);
+      setTimeout(
+        () => {
+          this.updateLogoRight(window.innerWidth);
+
+          this.onGlobalScroll();
+        },
+        0,
+      );
     }
 
     this.initialized = true;
@@ -169,7 +176,7 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
     this.updateLogoRight(newSize);
   }
 
-  private onGlobalScroll(_: Event) {
+  private onGlobalScroll(_?: Event) {
     const scroll = window.scrollY;
 
     // Update the background of navigator
