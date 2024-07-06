@@ -17,12 +17,14 @@ import { parse } from 'yaml';
 function printHelp() {
   console.error(`usage:
   builder.mjs --values VALUES [--output OUTPUT] translate PATH
+  builder.mjs site PATH OUTPUT_PATH
 
 Modules:
   translate       The translate sub command.
 
 Arguments:
   PATH            The path to the input html template.
+  OUTPUT_PATH     The output path where site will be built.
 
 Options:
   --values, -v VALUES
@@ -116,6 +118,7 @@ try {
 
   if (values.help) {
     printHelp();
+    process.exit(0);
   } else if (!positionals.length) {
     throw Error("MODULE is required : translate");
   } else {
