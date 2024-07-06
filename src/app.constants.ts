@@ -5,6 +5,6 @@ export const APP_CONSTANTS = {
     publicationDate: new Date(Date.parse('2018-01-01')),
     rating: 4.1,
     ratingCount: 27,
-    url: 'https://aesthetics-app.web.app/',
+    url: 'https://aesthetics-workout.web.app/',
   },
 };
