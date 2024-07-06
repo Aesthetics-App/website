@@ -7,20 +7,25 @@ import {
   rmSync,
   cpSync,
   lstatSync,
+  readdirSync,
 } from 'node:fs';
 import { dirname, join } from 'node:path';
 
 import nunjucks from 'nunjucks';
 import { parse } from 'yaml';
+import { minify } from 'html-minifier';
 
 
 function printHelp() {
   console.error(`usage:
   builder.mjs --values VALUES [--output OUTPUT] translate PATH
   builder.mjs site PATH OUTPUT_PATH
+  builder.mjs minify PATH
 
 Modules:
   translate       The translate sub command.
+  site            Create the content of the public/ folder for deployment.
+  minify          Minify all .html files in deep.
 
 Arguments:
   PATH            The path to the input html template.
@@ -90,6 +95,39 @@ function makePublicSite([ path, outPath ]) {
 }
 
 
+function minifyRecurse([ path ]) {
+  if (!path) {
+    printHelp();
+    return 2;
+  } else {
+    // Find all html files
+    const htmls = readdirSync(path, { recursive: true })
+      .map((relPath) => join(path, relPath))
+      .filter((absPath) => lstatSync(absPath).isFile() && absPath.endsWith('.html'));
+
+    for (const html of htmls) {
+      // Minify each HTML files
+      writeFileSync(
+        html,
+        minify(
+          readFileSync(
+            html,
+            { encoding: 'utf-8' },
+          ),
+          {
+            collapseWhitespace: true,
+            minifyCSS: true,
+          }, // Not remove comments (used by angular)
+        ),
+        { encoding: 'utf-8' },
+      );
+    }
+  }
+
+  return 0;
+}
+
+
 const argv = process.argv.slice(2); // skip node and script name
 
 let action;
@@ -128,6 +166,9 @@ try {
         break;
       case 'site':
         action = () => makePublicSite(positionals.slice(1));
+        break;
+      case 'minify':
+        action = () => minifyRecurse(positionals.slice(1));
         break;
       default:
         throw Error('Unknown module', positionals[0]);
