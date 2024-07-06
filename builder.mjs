@@ -117,6 +117,7 @@ function minifyRecurse([ path ]) {
           {
             collapseWhitespace: true,
             minifyCSS: true,
+            minifyJS: true,
           }, // Not remove comments (used by angular)
         ),
         { encoding: 'utf-8' },
