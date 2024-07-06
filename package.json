@@ -5,9 +5,15 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration=production,all",
+    "postbuild": "npm run translate && npm run publish:site",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:aesthetics-app": "node dist/aesthetics-app/server/server.mjs"
+    "serve:ssr:aesthetics-app": "node dist/aesthetics-app/server/server.mjs",
+    "publish:site": "node builder.mjs site dist/aesthetics-app/browser/ dist/public",
+    "translate": "npm run translate:en && npm run translate:fr && npm run translate:es",
+    "translate:en": "node builder.mjs -v src/locale/vars.yml translate dist/aesthetics-app/browser/en/index.html",
+    "translate:fr": "node builder.mjs -v src/locale/vars.fr.yml translate dist/aesthetics-app/browser/fr/index.html",
+    "translate:es": "node builder.mjs -v src/locale/vars.es.yml translate dist/aesthetics-app/browser/es/index.html"
   },
   "private": true,
   "dependencies": {
