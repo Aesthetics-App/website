@@ -147,6 +147,10 @@ export class HeaderComponent implements OnInit, AfterViewChecked, OnDestroy {
       },
     );
 
+    if (typeof window !== 'undefined') {
+      this.updateLogoRight(window.innerWidth);
+    }
+
     this.initialized = true;
   }
 
