@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://aesthetics-workout.web.app/sitemap.xml
