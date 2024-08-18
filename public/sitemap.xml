@@ -47,36 +47,6 @@
     </image:image>
   </url>
   <url>
-    <loc>https://aesthetics-workout.web.app/fr</loc>
-    <image:image>
-      <image:loc>https://aesthetics-workout.web.app/favicon.ico</image:loc>
-      <image:title>Logo</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://aesthetics-workout.web.app/image/github.svg</image:loc>
-      <image:title>Logo GitHub</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://aesthetics-workout.web.app/image/david-belbeze.jpg</image:loc>
-      <image:title>Photo de l'auteur de l'application</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://aesthetics-workout.web.app/es</loc>
-    <image:image>
-      <image:loc>https://aesthetics-workout.web.app/favicon.ico</image:loc>
-      <image:title>Logo</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://aesthetics-workout.web.app/image/github.svg</image:loc>
-      <image:title>Logo de GitHub</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://aesthetics-workout.web.app/image/david-belbeze.jpg</image:loc>
-      <image:title>Foto del autor de la aplicación</image:title>
-    </image:image>
-  </url>
-  <url>
     <loc>https://aesthetics-workout.web.app/privacy_policy.html</loc>
   </url>
 </urlset>
